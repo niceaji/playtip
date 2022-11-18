@@ -1,0 +1,25 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "오브젝트 속성 접근"
+description: ""
+isJS: true
+---
+
+## js
+
+```js
+const site = {
+  title: "Play Tip",
+  url: "https://playtip.kr",
+};
+
+// dot 표기법 - Dot Notation
+console.log(site.title);
+
+// 대괄호 표기법 - Square Bracket Notation
+console.log(site["title"]);
+
+// 구조 분해 할당 - Object Destructuring
+const { title, url } = site;
+console.log(title, url);
+```

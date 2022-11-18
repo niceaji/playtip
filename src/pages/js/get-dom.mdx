@@ -1,0 +1,38 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "DOM 탐색"
+seoTitle: "find and access HTML elements in an HTML page"
+description: ""
+helpUrl:
+  [
+    "https://developer.mozilla.org/ko/docs/Web/API/Document/getElementById",
+    "https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector",
+    "https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll",
+  ]
+tags: ["dom"]
+---
+
+## html
+
+```html
+<img
+  src="https://t1.daumcdn.net/daumtop_deco/images/top/2017/logo_foot.gif"
+  id="logo"
+  alt="로고이미지"
+/>
+
+<div class="active">안녕하세요</div>
+<div>PlayTip</div>
+```
+
+## js
+
+```js
+const el = document.getElementById("logo");
+const div = document.querySelector(".active");
+const divs = document.querySelectorAll("div");
+
+console.log(el);
+console.log(div);
+console.log(divs);
+```

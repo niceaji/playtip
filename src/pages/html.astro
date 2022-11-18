@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Item from "../components/Item.astro";
+
+const posts = await Astro.glob("./html/*.{md,mdx}");
+---
+
+<Layout title="HTML" depth="1">
+  <div class="box row">
+    {
+      posts.map((post) => (
+        <Item title={post.frontmatter.title} url={post.url} />
+      ))
+    }
+  </div>
+</Layout>

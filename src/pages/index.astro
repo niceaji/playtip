@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const menus = [
+  {
+    title: "JavaScript",
+    url: "/js",
+  },
+  {
+    title: "HTML",
+    url: "/html",
+  },
+  {
+    title: "CSS",
+    url: "/css",
+  },
+];
+---
+
+<Layout depth="0">
+  <div>
+    {
+      menus.map((menu) => (
+        <div class="card">
+          <a href={menu.url} class="menu">
+            {menu.title}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

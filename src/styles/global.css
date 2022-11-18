@@ -1,0 +1,49 @@
+/* #D2001A
+#FFDE00
+#FFFAE7
+#EFEFEF */
+:root {
+  --color-lightGrey: #efefef;
+}
+body > .container {
+  max-width: 720px;
+  margin-bottom: 50px;
+}
+h1 {
+  border-bottom: 1px solid #ddd;
+}
+.container.depth1 h1 {
+  color: #d2001a;
+  border: none;
+}
+.brand img {
+  width: 150px;
+}
+.button.item {
+  width: 100%;
+}
+.button.menu {
+  width: 100%;
+  font-size: 2em;
+}
+.related {
+  margin: 30px 0 0 0;
+}
+.depth2 h2 {
+  margin-bottom: 5px;
+}
+.depth2 pre {
+  margin-top: 0;
+}
+/* #run {
+  background-color: #ffde00;
+} */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    --bg-color: #000;
+    --bg-secondary-color: #131316;
+    --font-color: #f5f5f5;
+    --color-grey: #ccc;
+    --color-darkGrey: #777;
+  }
+} */

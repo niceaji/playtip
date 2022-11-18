@@ -1,0 +1,32 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "CSS 에니메이션"
+seoTitle: "CSS fadeIn Animation"
+description: ""
+helpUrl: ["https://animate.style"]
+---
+
+## html
+
+```html
+<div class="fadein" style="background-color:green">CSS fadeIn Animation</div>
+```
+
+## css
+
+```css
+.fadein {
+  display: inline-block;
+  background: yellow;
+  padding: 10px;
+  animation: fadein 2s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+```

@@ -1,0 +1,44 @@
+---
+const { exampleUrl } = Astro.props;
+---
+
+<button id="run" data-url={exampleUrl}>실행하기</button>
+<iframe frameborder="1" id="codeframe" sandbox="allow-scripts"></iframe>
+
+<script is:inline>
+  const $ = (s) => document.getElementById(s);
+  const $runBtn = $("run");
+  $runBtn.addEventListener("click", () => {
+    if ($runBtn.dataset.url) {
+      window.open($runBtn.dataset.url);
+      return;
+    }
+
+    const html = $("html")?.nextElementSibling?.children[0]?.innerText;
+    const js = $("js")?.nextElementSibling?.children[0]?.innerText;
+    const css = $("css")?.nextElementSibling?.children[0]?.innerText;
+
+    const $iframe = $("codeframe");
+    $iframe.srcdoc = `<!DOCTYPE html>
+		<head>
+			<meta charset="UTF-8" />
+			<style>${css}</style>
+		</head>
+		<body bgcolor="#eee">
+			${html || "개발자도구 - 콘솔창 확인"} 
+			<script>${js}<\/script>
+		</body></html>`;
+
+    $iframe.style.display = "block";
+  });
+</script>
+
+<style is:inline>
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: 1px inset;
+    margin-top: 10px;
+    display: none;
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "DOM 추가-appendChild()"
+description: ""
+helpUrl: ["https://developer.mozilla.org/ko/docs/Web/API/Node/appendChild"]
+tags: ["dom"]
+---
+
+## html
+
+```html
+<div id="debug">마지막 자식으로 노드를 붙임</div>
+```
+
+## js
+
+```js
+const div = document.createElement("div");
+const textNode = document.createTextNode("hello!");
+
+div.appendChild(textNode);
+document.querySelector("#debug").appendChild(div);
+```

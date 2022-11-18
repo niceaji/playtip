@@ -1,0 +1,17 @@
+<iframe frameborder="0" scrolling="no" id="code"></iframe>
+
+<style is:inline>
+  iframe {
+    width: 100%;
+    height: 710px;
+    border: 0;
+  }
+</style>
+<script is:inline>
+  const $ = (s) => document.getElementById(s);
+  const $pre = $("js")?.nextElementSibling;
+  console.log($pre);
+  $pre.style.display = "none";
+  const js = $pre?.children[0]?.innerText;
+  $("code").src = "http://localhost:3002/?q=" + encodeURIComponent(js);
+</script>

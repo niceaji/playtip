@@ -1,0 +1,20 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "iframe에 html 동적 삽입"
+description: ""
+helpUrl:
+  ["https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/srcdoc"]
+---
+
+## html
+
+```html
+<iframe frameborder="1"></iframe>
+```
+
+## js
+
+```js
+const iframe = document.querySelector("iframe");
+iframe.srcdoc = "<h1>PlayTip</h1>";
+```

@@ -1,0 +1,37 @@
+---
+const { exampleUrl } = Astro.props;
+---
+
+<button id="run" data-url={exampleUrl}>Run</button>
+
+<form
+  action="https://codepen.io/pen/define"
+  method="POST"
+  target="_blank"
+  id="codepenForm"
+>
+  <input type="hidden" name="data" />
+</form>
+
+<script is:inline>
+  // https://blog.codepen.io/documentation/prefill/
+  const $ = (s) => document.getElementById(s);
+  const runBtn = $("run");
+  runBtn.addEventListener("click", () => {
+    if (runBtn.dataset.url) {
+      window.open(runBtn.dataset.url);
+      return;
+    }
+
+    const title = document.querySelector("h1").innerText;
+    const html = $("html")?.nextElementSibling?.children[0]?.innerText;
+    const js = $("js")?.nextElementSibling?.children[0]?.innerText;
+    const css = $("css")?.nextElementSibling?.children[0]?.innerText;
+
+    const $codepenForm = $("codepenForm");
+    const data = JSON.stringify({ title, html, js, css });
+
+    $codepenForm.children.data.value = data;
+    $codepenForm.submit();
+  });
+</script>

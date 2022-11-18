@@ -1,0 +1,26 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "inline, block"
+description: ""
+---
+
+## html
+
+```html
+<!-- 한 줄에 다른 엘리먼트들과 나란히 배치 -->
+<a>inline</a>
+<!-- 혼자 한 줄을 차지 -->
+<div>block</div>
+<!-- display로 기본 속성 변경 -->
+<a style="display:block">block a</a>
+```
+
+## css
+
+```css
+a,
+div {
+  background-color: green;
+  margin: 5px;
+}
+```

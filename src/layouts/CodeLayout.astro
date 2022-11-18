@@ -1,0 +1,28 @@
+---
+import Head from "../components/Head.astro";
+import NavCode from "../components/NavCode.astro";
+import CodeRun from "../components/CodeRun.astro";
+import CodeRunJS from "../components/CodeRunJS.astro";
+import HelpUrl from "../components/HelpUrl.astro";
+
+const {
+  content: { title, exampleUrl, helpUrl, seoTitle, isJS },
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <Head title={title} description={seoTitle} />
+  </head>
+  <body>
+    <div class="container depth2">
+      <NavCode />
+      <h1>{title}</h1>
+      <slot />
+      {isJS ? <CodeRunJS /> : <CodeRun exampleUrl={exampleUrl} />}
+
+      <HelpUrl urls={helpUrl} />
+    </div>
+  </body>
+</html>

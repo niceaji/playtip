@@ -1,0 +1,25 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "텍스트 생략"
+seoTitle: "Text Tllipsis"
+description: ""
+---
+
+## html
+
+```html
+<div>ellipsis ellipsis ellipsis ellipsis</div>
+<div>안녕하세요 안녕하세요</div>
+```
+
+## css
+
+```css
+div {
+  background-color: green;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
+}
+```

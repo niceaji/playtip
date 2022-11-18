@@ -1,0 +1,15 @@
+---
+const { urls } = Astro.props;
+---
+
+<ul class="related">
+  {
+    urls?.map((url: string) => (
+      <li>
+        <a href={url} target="_blank" rel="help">
+          {url}
+        </a>
+      </li>
+    ))
+  }
+</ul>

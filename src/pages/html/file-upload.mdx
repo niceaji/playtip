@@ -1,0 +1,19 @@
+---
+layout: "../../layouts/CodeLayout.astro"
+title: "파일 업로드"
+description: ""
+---
+
+## html
+
+```html
+<form method="post" enctype="multipart/form-data">
+  <label>이미지 선택</label>
+  <input type="file" name="file1" accept="image/png, image/jpeg" />
+  <hr />
+  <label>여러파일 선택</label>
+  <input type="file" name="file2" multiple />
+  <hr />
+  <input type="submit" />
+</form>
+```
