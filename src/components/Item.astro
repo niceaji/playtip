@@ -1,9 +1,22 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, tags } = Astro.props;
 ---
 
-<div class="col-6">
-  <a class="button item" href={url}>
+<div
+  class="relative flex flex-col p-7 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800"
+>
+  <a href={url} class="transition hover:text-red-500">
     {title}
   </a>
+  {
+    tags && (
+      <div class="mt-3 text-xs text-slate-400">
+        {tags.map((tag: string) => (
+          <a href="/tags/" class="">
+            {tag}
+          </a>
+        ))}
+      </div>
+    )
+  }
 </div>

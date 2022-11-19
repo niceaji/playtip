@@ -1,28 +1,38 @@
 ---
-import Head from "../components/Head.astro";
 import NavCode from "../components/NavCode.astro";
 import CodeRun from "../components/CodeRun.astro";
 import CodeRunJS from "../components/CodeRunJS.astro";
 import HelpUrl from "../components/HelpUrl.astro";
+import Layout from "./BaseLayout.astro";
 
 const {
   content: { title, exampleUrl, helpUrl, seoTitle, isJS },
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <Head title={title} description={seoTitle} />
-  </head>
-  <body>
-    <div class="container depth2">
-      <NavCode />
-      <h1>{title}</h1>
-      <slot />
-      {isJS ? <CodeRunJS /> : <CodeRun exampleUrl={exampleUrl} />}
+<Layout title={title} description={seoTitle}>
+  <NavCode slot="nav" />
 
-      <HelpUrl urls={helpUrl} />
-    </div>
-  </body>
-</html>
+  <h1
+    slot="title"
+    class="text-3xl font-bold leading-tighter tracking-tighter my-4 font-heading"
+  >
+    {title}
+  </h1>
+  <slot />
+
+  {isJS ? <CodeRunJS /> : <CodeRun exampleUrl={exampleUrl} />}
+  <HelpUrl urls={helpUrl} />
+</Layout>
+<style is:inline>
+  .astro-code {
+    background-color: #212a31 !important;
+    padding: 1rem;
+  }
+  h2 {
+    letter-spacing: -0.05em;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+  }
+</style>

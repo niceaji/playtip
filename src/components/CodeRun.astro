@@ -2,7 +2,14 @@
 const { exampleUrl } = Astro.props;
 ---
 
-<button id="run" data-url={exampleUrl}>실행하기</button>
+<div class="my-3">
+  <button
+    id="run"
+    data-url={exampleUrl}
+    class="px-8 py-3 bg-gray-300 transition hover:bg-gray-400 rounded"
+    >실행하기</button
+  >
+</div>
 <iframe frameborder="1" id="codeframe" sandbox="allow-scripts"></iframe>
 
 <script is:inline>
@@ -24,7 +31,7 @@ const { exampleUrl } = Astro.props;
 			<meta charset="UTF-8" />
 			<style>${css}</style>
 		</head>
-		<body bgcolor="#eee">
+		<body bgcolor="#fff">
 			${html || "개발자도구 - 콘솔창 확인"} 
 			<script>${js}<\/script>
 		</body></html>`;
@@ -38,7 +45,6 @@ const { exampleUrl } = Astro.props;
     width: 100%;
     height: 300px;
     border: 1px inset;
-    margin-top: 10px;
     display: none;
   }
 </style>

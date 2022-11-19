@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/TopLayout.astro";
 
 const menus = [
   {
@@ -18,14 +18,17 @@ const menus = [
 ---
 
 <Layout depth="0">
-  <div>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {
       menus.map((menu) => (
-        <div class="card">
-          <a href={menu.url} class="menu">
-            {menu.title}
-          </a>
-        </div>
+        <a
+          href={menu.url}
+          class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800"
+        >
+          <div class="flex items-center mb-4">
+            <div class="text-2xl font-bold">{menu.title}</div>
+          </div>
+        </a>
       ))
     }
   </div>

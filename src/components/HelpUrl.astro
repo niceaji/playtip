@@ -2,14 +2,21 @@
 const { urls } = Astro.props;
 ---
 
-<ul class="related">
-  {
-    urls?.map((url: string) => (
-      <li>
-        <a href={url} target="_blank" rel="help">
-          {url}
-        </a>
-      </li>
-    ))
-  }
-</ul>
+<div class="text-sm mt-4">
+  <ul>
+    {
+      urls?.map((url: string) => (
+        <li>
+          <a
+            href={url}
+            target="_blank"
+            rel="help"
+            class="text-sky-400 truncate block"
+          >
+            {url}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

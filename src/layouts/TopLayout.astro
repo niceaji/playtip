@@ -1,0 +1,21 @@
+---
+import Nav from "../components/Nav.astro";
+import Layout from "./BaseLayout.astro";
+
+const { title, depth, description } = Astro.props;
+---
+
+<Layout title={title} depth={depth} description={description}>
+  <Nav slot="nav" />
+  {
+    title && (
+      <h1
+        slot="title"
+        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+      >
+        {title}
+      </h1>
+    )
+  }
+  <slot />
+</Layout>

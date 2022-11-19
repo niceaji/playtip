@@ -1,15 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/TopLayout.astro";
 import Item from "../components/Item.astro";
 
 const posts = await Astro.glob("./js/*.{md,mdx}");
 ---
 
 <Layout title="JavaScript" depth="1">
-  <div class="box row">
+  <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
     {
       posts.map((post) => (
-        <Item title={post.frontmatter.title} url={post.url} />
+        <Item
+          title={post.frontmatter.title}
+          url={post.url}
+          tags={post.frontmatter.tags}
+        />
       ))
     }
   </div>
