@@ -1,0 +1,107 @@
+---
+import PostsLayout from "~/layouts/PostsLayout.astro";
+import CodeLayout from "~/layouts/CodeLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob("~/data/**/*.{md,mdx}");
+
+  const filter = (path: string) => {
+    return posts.filter((post) => post.url.indexOf(`src/data/${path}`) === 0);
+  };
+
+  const menus = [
+    {
+      params: {
+        path: "js",
+      },
+      props: {
+        title: "JavaScript",
+        posts: filter("js"),
+      },
+    },
+    {
+      params: {
+        path: "js",
+        page: "dom",
+      },
+      props: {
+        title: "Javascript > DOM",
+        posts: filter("js/dom"),
+      },
+    },
+    {
+      params: {
+        path: "js",
+        page: "array",
+      },
+      props: {
+        title: "Javascript > Array",
+        posts: filter("js/array"),
+      },
+    },
+    {
+      params: {
+        path: "js",
+        page: "string",
+      },
+      props: {
+        title: "Javascript > String",
+        posts: filter("js/string"),
+      },
+    },
+    {
+      params: {
+        path: "html",
+      },
+      props: {
+        title: "HTML",
+        posts: filter("html"),
+      },
+    },
+    {
+      params: {
+        path: "css",
+      },
+      props: {
+        title: "CSS",
+        posts: filter("css"),
+      },
+    },
+  ];
+
+  const pages = posts.map((post) => {
+    const arr = post.url
+      .replace("src/data/", "")
+      .replace(".mdx", "")
+      .split("/");
+    const path = arr.shift();
+    const page = arr.join("/");
+
+    return {
+      params: { path, page },
+      props: { title: post.frontmatter.title, posts: [], post },
+    };
+  });
+
+  return menus.concat(pages);
+}
+
+// const { path } = Astro.params;
+const { title, posts, post } = Astro.props;
+
+const items = posts.map((post: any) => {
+  return Object.assign({}, post, {
+    url: post.url.replace("src/data", "").replace(".mdx", ""),
+  });
+});
+
+console.log(post);
+---
+
+{
+  items.length > 0 ? (
+    <PostsLayout title={title} posts={items} />
+  ) : (
+    <CodeLayout title={title}>{post.Content}</CodeLayout>
+  )
+}
