@@ -1,0 +1,18 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 요소 판별-every()"
+seoTitle: ""
+description: "배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트"
+isJS: true
+---
+
+## js
+
+```js
+const numbers = [1, 2, 3];
+// 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트
+const isCheck = numbers.every(function (number) {
+  return number < 3;
+});
+console.log(isCheck);
+```

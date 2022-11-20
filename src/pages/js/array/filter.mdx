@@ -1,0 +1,18 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 필터링-filter()"
+seoTitle: ""
+description: "주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환"
+isJS: true
+---
+
+## js
+
+```js
+const words = ["a", "b", "c", "dd"];
+// 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환
+const newWords = words.filter(function (word) {
+  return word.length === 2;
+});
+console.log(newWords);
+```

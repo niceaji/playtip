@@ -22,12 +22,13 @@ const {
   <slot />
 
   {isJS ? <CodeRunJS /> : <CodeRun exampleUrl={exampleUrl} />}
-  <HelpUrl urls={helpUrl} />
+  <!-- <HelpUrl urls={helpUrl} /> -->
 </Layout>
 <style is:inline>
   .astro-code {
     background-color: #212a31 !important;
-    padding: 1rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
   h2 {
     letter-spacing: -0.05em;

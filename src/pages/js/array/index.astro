@@ -1,0 +1,8 @@
+---
+import Layout from "~/layouts/PostsLayout.astro";
+
+const posts = await Astro.glob("./*.{md,mdx}");
+const title = "JavaScript > Array";
+---
+
+<Layout title={title} posts={posts} />

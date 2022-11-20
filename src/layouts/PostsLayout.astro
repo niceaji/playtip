@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/TopLayout.astro";
-import Item from "../components/Item.astro";
+import Layout from "~/layouts/TopLayout.astro";
+import Item from "~/components/Item.astro";
 
-const posts = await Astro.glob("./css/*.{md,mdx}");
+const { title, posts } = Astro.props;
 ---
 
-<Layout title="HTML" depth="1">
+<Layout title={title} depth="1">
   <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
     {
-      posts.map((post) => (
+      posts.map((post: any) => (
         <Item
           title={post.frontmatter.title}
           url={post.url}

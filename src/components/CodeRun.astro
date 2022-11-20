@@ -6,9 +6,14 @@ const { exampleUrl } = Astro.props;
   <button
     id="run"
     data-url={exampleUrl}
-    class="px-8 py-3 bg-gray-300 transition hover:bg-gray-400 rounded"
-    >실행하기</button
+    title="Play"
+    class="px-8 py-3 bg-gray-300 transition hover:bg-gray-400 rounded flex content-center"
   >
+    <span>실행하기</span>
+    <!-- <span>
+      <img src="/svg/play-outline.svg" alt="" class="mr-1" width="23" />
+    </span> -->
+  </button>
 </div>
 <iframe frameborder="1" id="codeframe" sandbox="allow-scripts"></iframe>
 

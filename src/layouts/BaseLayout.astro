@@ -30,10 +30,22 @@ import "../styles/global.css";
     />
   </head>
   <body class="bg-blue-50">
-    <div class={`container max-w-3xl px-4 depth${depth}`}>
+    <main class={`container max-w-3xl px-4 depth${depth}`}>
       <slot name="nav" />
       <slot name="title" />
       <slot />
-    </div>
+    </main>
+    <footer
+      class="border-t border-gray-200 dark:border-slate-900 my-20 pt-3 text-right"
+    >
+      <div class="container max-w-3xl">
+        <a
+          href="/about"
+          class="inline-block text-gray-400 font-sono tracking-tighter text-sm"
+        >
+          about</a
+        >
+      </div>
+    </footer>
   </body>
 </html>
