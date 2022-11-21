@@ -5,10 +5,9 @@ import CodeRunJS from "../components/CodeRunJS.astro";
 import HelpUrl from "../components/HelpUrl.astro";
 import Layout from "./BaseLayout.astro";
 
-// const {
-//   content: { title, exampleUrl, helpUrl, seoTitle, isJS },
-// } = Astro.props;
-const { title, exampleUrl, helpUrl, seoTitle, isJS } = Astro.props;
+const {
+  content: { title, exampleUrl, helpUrl, seoTitle, isJS },
+} = Astro.props;
 ---
 
 <Layout title={title} description={seoTitle}>
