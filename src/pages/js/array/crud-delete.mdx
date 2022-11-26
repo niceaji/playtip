@@ -1,0 +1,18 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 CRUD-Delete"
+description: ""
+isJS: true
+---
+
+## js
+
+```js
+const todos = ["운동", "공부"];
+const deleteTodo = "공부";
+const newTodos = todos.filter(function (todo) {
+  return todo !== deleteTodo;
+});
+
+console.log(newTodos);
+```

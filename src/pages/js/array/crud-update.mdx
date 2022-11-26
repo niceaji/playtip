@@ -1,0 +1,19 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 CRUD-Update"
+description: ""
+isJS: true
+---
+
+## js
+
+```js
+const todos = ["운동", "게임"];
+const updateTodo = "게임";
+const updateIndex = todos.findIndex(function (todo) {
+  return todo === updateTodo;
+});
+todos[updateIndex] = "공부";
+
+console.log(todos);
+```
