@@ -1,0 +1,32 @@
+---
+const pathname = Astro.url.pathname;
+const arr = pathname === "/" ? [""] : pathname.split("/");
+
+const path = arr.map((item, index) => {
+  return {
+    url: [...arr].splice(0, index + 1).join("/") || "/",
+    title: (item || "home").toLocaleUpperCase(),
+  };
+});
+---
+
+<ol class="breadcrumb text-sm text-sky-500 mb-2">
+  {
+    path.map((item) => (
+      <li>
+        <a href={item.url}>{item.title}</a>
+      </li>
+    ))
+  }
+</ol>
+
+<style is:inline>
+  .breadcrumb > li {
+    display: inline-block;
+  }
+  .breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "경로 표시"
+description: ""
+---
+
+## html
+
+```html
+<ol class="breadcrumb">
+  <li><a href="/">HOME</a></li>
+  <li><a href="/js">JS</a></li>
+  <li><a href="/js/array">ARRAY</a></li>
+  <li><a href="/js/array/chunk">CHUNK</a></li>
+</ol>
+```
+
+## css
+
+```css
+.breadcrumb {
+  list-style: none;
+}
+.breadcrumb > li {
+  display: inline-block;
+}
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+```

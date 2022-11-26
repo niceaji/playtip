@@ -1,0 +1,19 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "DOM 생성-insertAdjacentHTML()"
+description: ""
+---
+
+## html
+
+```html
+<div id="debug">HTML Element의 특정 위치에 원하는 node를 추가</div>
+```
+
+## js
+
+```js
+const div = document.getElementById("debug");
+//  앞(beforebegin), 뒤(afterend), 첫번째 자식(afterbegin), 마지막자식(beforeend)
+div.insertAdjacentHTML("afterbegin", "<h1>insertAdjacentHTML</h1>");
+```

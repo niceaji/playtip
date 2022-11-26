@@ -1,6 +1,6 @@
 ---
-import Nav from "../components/Nav.astro";
-import Layout from "./BaseLayout.astro";
+import Layout from "~/layouts/BaseLayout.astro";
+import Nav from "~/components/Nav.astro";
 
 const { title, depth, description } = Astro.props;
 ---
@@ -11,7 +11,8 @@ const { title, depth, description } = Astro.props;
     title && (
       <h1
         slot="title"
-        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+        class="text-3xl md:text-4xl font-bold leading-tighter
+        tracking-tighter mb-4 font-heading"
       >
         {title}
       </h1>

@@ -1,0 +1,27 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "DOM 생성-DocumentFragment"
+description: ""
+---
+
+## html
+
+```html
+<div id="debug">HTML의 DOM 트리에는 영향없이 메모리에서 정의</div>
+```
+
+## js
+
+```js
+const debug = document.querySelector("#debug");
+const df = new DocumentFragment();
+const tips = ["js", "html", "css"];
+
+tips.forEach(function (item) {
+  var li = document.createElement("li");
+  li.innerHTML = item;
+  df.appendChild(li);
+});
+
+debug.appendChild(df);
+```

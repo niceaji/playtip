@@ -34,11 +34,11 @@ const { exampleUrl } = Astro.props;
     $iframe.srcdoc = `<!DOCTYPE html>
 		<head>
 			<meta charset="UTF-8" />
-			<style>${css}</style>
+			<style>${css || ""}</style>
 		</head>
 		<body bgcolor="#fff">
 			${html || "개발자도구 - 콘솔창 확인"} 
-			<script>${js}<\/script>
+			<script>${js || ""}<\/script>
 		</body></html>`;
 
     $iframe.style.display = "block";
