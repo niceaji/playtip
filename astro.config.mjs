@@ -1,8 +1,6 @@
 import path from "path";
 import { fileURLToPath } from "url";
-
 import { defineConfig } from "astro/config";
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
@@ -12,8 +10,13 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind()],
+  site: "https://playtip.kr",
+
+  integrations: [mdx(), tailwind(), sitemap()],
   markdown: {
     // extendDefaultPlugins: true,
     // syntaxHighlight: "prism",
