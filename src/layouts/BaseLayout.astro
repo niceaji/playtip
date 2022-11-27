@@ -1,5 +1,6 @@
 ---
 import Breadcrumb from "~/components/Breadcrumb.astro";
+import Footer from "~/components/Footer.astro";
 import "../styles/global.css";
 
 const { title, depth, description } = Astro.props;
@@ -37,17 +38,6 @@ import "../styles/global.css";
       <slot name="title" />
       <slot />
     </main>
-    <footer
-      class="border-t border-gray-200 dark:border-slate-900 my-20 pt-3 text-right"
-    >
-      <div class="container max-w-3xl">
-        <a
-          href="/about"
-          class="inline-block text-gray-400 font-sono tracking-tighter text-sm"
-        >
-          about</a
-        >
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

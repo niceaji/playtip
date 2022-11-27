@@ -3,9 +3,10 @@ import NavCode from "../components/NavCode.astro";
 import CodeRun from "../components/CodeRun.astro";
 import CodeRunJS from "../components/CodeRunJS.astro";
 import Layout from "./BaseLayout.astro";
+import TagsLink from "~/components/TagsLink.astro";
 
 const {
-  content: { title, exampleUrl, description, isJS, tag },
+  content: { title, exampleUrl, description, isJS, tags },
 } = Astro.props;
 ---
 
@@ -21,17 +22,18 @@ const {
 
   {isJS ? <CodeRunJS /> : <CodeRun exampleUrl={exampleUrl} />}
   <!-- <HelpUrl urls={helpUrl} /> -->
+  {tags && <TagsLink tags={tags} />}
+  <style is:inline>
+    .astro-code {
+      background-color: #212a31 !important;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+    h2 {
+      letter-spacing: -0.05em;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      margin-top: 1.2rem;
+    }
+  </style>
 </Layout>
-<style is:inline>
-  .astro-code {
-    background-color: #212a31 !important;
-    padding: 0.8rem;
-    font-size: 0.9rem;
-  }
-  h2 {
-    letter-spacing: -0.05em;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    margin-top: 1.2rem;
-  }
-</style>

@@ -1,0 +1,19 @@
+---
+import Layout from "~/layouts/PostsLayout.astro";
+
+const allPosts = await Astro.glob("../**/*.mdx");
+const tags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+].filter((i) => i);
+
+const posts = tags.map((tag) => {
+  return {
+    url: `/tags/${tag}`,
+    frontmatter: {
+      title: tag,
+    },
+  };
+});
+---
+
+<Layout title={"태그 목록"} posts={posts} />

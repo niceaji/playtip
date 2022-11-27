@@ -14,7 +14,7 @@ const path = arr.map((item, index) => {
   {
     path.map((item) => (
       <li>
-        <a href={item.url}>{item.title}</a>
+        <a href={item.url}>{decodeURIComponent(item.title)}</a>
       </li>
     ))
   }
