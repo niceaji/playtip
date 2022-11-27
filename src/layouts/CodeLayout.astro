@@ -2,17 +2,15 @@
 import NavCode from "../components/NavCode.astro";
 import CodeRun from "../components/CodeRun.astro";
 import CodeRunJS from "../components/CodeRunJS.astro";
-import HelpUrl from "../components/HelpUrl.astro";
 import Layout from "./BaseLayout.astro";
 
 const {
-  content: { title, exampleUrl, helpUrl, seoTitle, isJS },
+  content: { title, exampleUrl, description, isJS, tag },
 } = Astro.props;
 ---
 
-<Layout title={title} description={seoTitle}>
+<Layout title={title} description={description}>
   <NavCode slot="nav" />
-
   <h1
     slot="title"
     class="text-3xl font-bold leading-tighter tracking-tighter my-4 font-heading"

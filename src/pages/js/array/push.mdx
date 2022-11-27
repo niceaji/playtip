@@ -9,10 +9,15 @@ isJS: true
 ## js
 
 ```js
-const items = ["html", "javascript", "css"];
-// array.push()
-items.push("react");
+function repeat(word, count) {
+  const result = [];
+  for (let i = 0; i < count; i++) {
+    result.push(word);
+  }
+  return result;
+}
 
-// ['html','javascript','css', 'react']
-console.log(items);
+const result = repeat("tip", 3);
+
+console.log(result);
 ```

@@ -1,0 +1,20 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 얕은 복사"
+description: ""
+isJS: true
+tag: ["copy-array"]
+---
+
+## js
+
+```js
+const a = [1, 2, 3];
+// 얕은복사, Shallow Copy, 원본의 메모리위치 복사
+const b = a;
+
+b.push(4);
+
+console.log("a:", a);
+console.log("b:", b);
+```

@@ -1,0 +1,25 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "배열 깊은 복사"
+description: ""
+isJS: true
+tag: ["copy-array"]
+---
+
+## js
+
+```js
+const a = [1, 2, 3];
+
+// 깊은복사, Deep Copy
+const b = [...a];
+
+// 깊은복사 ex
+// const b = [].concat(a);
+// const b = a.map(i => i);
+
+b.push(4);
+
+console.log("a:", a);
+console.log("b:", b);
+```

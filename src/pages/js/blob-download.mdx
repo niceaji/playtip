@@ -1,0 +1,23 @@
+---
+layout: "~/layouts/CodeLayout.astro"
+title: "Blob 다운로드"
+description: ""
+isJS: true
+---
+
+## js
+
+```js
+const link = document.createElement("a");
+link.download = "playtip.txt";
+
+const blob = new Blob(["PlayTip!!!"], { type: "text/plain" });
+const objUrl = URL.createObjectURL(blob);
+link.href = objUrl;
+
+console.log(objUrl);
+link.click();
+
+// 메모리 해제
+URL.revokeObjectURL(link.href);
+```
