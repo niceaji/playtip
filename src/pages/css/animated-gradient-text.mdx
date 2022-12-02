@@ -1,0 +1,42 @@
+---
+layout: ~/layouts/CodeLayout.astro
+title: 애니메이션 그라데이션 텍스트
+description: ""
+---
+
+## html
+
+```html
+<div class="text">👋 안녕하세요!</div>
+```
+
+## css
+
+```css
+:root {
+  --bg-size: 400%;
+  --color-one: green;
+  --color-two: red;
+}
+
+.text {
+  font-weight: 900;
+  font-size: 5rem;
+  background: linear-gradient(
+      45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ani 7.5s linear infinite;
+}
+
+@keyframes ani {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+```
