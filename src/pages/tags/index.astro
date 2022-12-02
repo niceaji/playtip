@@ -10,7 +10,7 @@ const posts = tags.map((tag) => {
   return {
     url: `/tags/${tag}`,
     frontmatter: {
-      title: tag,
+      title: `#${tag}`,
     },
   };
 });
