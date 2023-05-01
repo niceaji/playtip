@@ -1,0 +1,18 @@
+---
+layout: ~/layouts/CodeLayout.astro
+title: 첫 문자를 대문자로
+description:
+isJS: true
+tags:
+  - array.join
+  - string.toUpperCase
+  - 구조 분해 할당
+---
+
+## js
+
+```js
+const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join("");
+// Playtip
+console.log(capitalize("playtip"));
+```

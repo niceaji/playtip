@@ -2,17 +2,20 @@
 layout: ~/layouts/CodeLayout.astro
 title: DOM 선택
 description: find and access HTML elements in an HTML page
+tags:
+	- DOM선택 
 ---
 
 ## html
 
 ```html
+개발자도구 - 콘솔창 확인
+
 <img
   src="https://t1.daumcdn.net/daumtop_deco/images/top/2017/logo_foot.gif"
   id="logo"
   alt="로고이미지"
 />
-
 <div class="active">안녕하세요</div>
 <div>PlayTip</div>
 ```
@@ -26,5 +29,6 @@ const divs = document.querySelectorAll("div");
 
 console.log(el);
 console.log(div);
+// NodeList(2) [div.active, div]
 console.log(divs);
 ```

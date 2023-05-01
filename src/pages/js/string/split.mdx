@@ -3,11 +3,18 @@ layout: ~/layouts/CodeLayout.astro
 title: 문자열을 배열로 만듦-split()
 description: ""
 isJS: true
+tags:
+  - string.split
 ---
 
 ## js
 
 ```js
 const title = "Hello PlayTip!";
+// 공백으로 나눔, (2) ['Hello','PlayTip']
 console.log(title.split(" "));
+
+const title = "playtip";
+// (7) ['p', 'l', 'a', 'y', 't', 'i', 'p']
+console.log(title.split(""));
 ```

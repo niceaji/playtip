@@ -1,0 +1,34 @@
+---
+layout: ~/layouts/CodeLayout.astro
+title: 자식노드 가져오기
+description:
+tags:
+	- DOM선택 
+---
+
+## html
+
+```html
+<ul class="parent">
+  개발자도구 - 콘솔창 확인
+  <br />
+  <a href="#">World</a>
+  <a href="#">WoW</a>
+</ul>
+```
+
+## js
+
+```js
+// HTMLCollection = HTML 요소
+// NodeList = HTML 요소 + 텍스트노드
+
+const parent = document.querySelector(".parent");
+// HTMLCollection 반환
+// HTMLCollection(3) [br, a, a]
+console.log(parent.children);
+
+// NodeList 반환
+// NodeList(7) [text, br, text, a, text, a, text]
+console.log(parent.childNodes);
+```

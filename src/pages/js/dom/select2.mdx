@@ -1,0 +1,31 @@
+---
+layout: ~/layouts/CodeLayout.astro
+title: DOM 선택2
+description: find and access HTML elements in an HTML page
+tags:
+	- DOM선택 
+---
+
+## html
+
+```html
+<ul class="parent">
+  개발자도구 - 콘솔창 확인
+  <br />
+  <a class="link" href="#">Hey</a>
+  <a class="link" href="#">Play</a>
+  <a href="#">Tip</a>
+</ul>
+```
+
+## js
+
+```js
+const a = document.getElementsByTagName("a");
+// HTMLCollection(3) [a.link, a.link, a]
+console.log(a);
+
+const link = document.getElementsByClassName("link");
+// HTMLCollection(2) [a.link, a.link]
+console.log(link);
+```
