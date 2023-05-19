@@ -9,9 +9,11 @@
 </style>
 <script is:inline>
   const $ = (s) => document.getElementById(s);
-  const $pre = $("js")?.nextElementSibling;
+  const $pre = $('js')?.nextElementSibling;
   console.log($pre);
-  $pre.style.display = "none";
+  $pre.style.display = 'none';
   const js = $pre?.children[0]?.innerText;
-  $("code").src = "http://localhost:3002/?q=" + encodeURIComponent(js);
+  // $("code").src = "http://localhost:3002/?q=" + encodeURIComponent(js);
+  $('code').src =
+    'https://niceaji.github.io/codesnippet?q=' + encodeURIComponent(js);
 </script>
