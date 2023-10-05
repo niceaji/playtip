@@ -1,6 +1,6 @@
 ---
-import { topMenus } from "~/config.mjs";
-import Layout from "~/layouts/TopLayout.astro";
+import { topMenus } from '~/config.mjs';
+import Layout from '~/layouts/TopLayout.astro';
 ---
 
 <Layout depth="0">
@@ -10,9 +10,9 @@ import Layout from "~/layouts/TopLayout.astro";
         <a
           href={menu.url}
           class="flex flex-col p-6 bg-white
-           dark:bg-slate-900 rounded shadow-xl 
+           rounded shadow-xl 
            hover:text-red-500
-           hover:shadow-lg transition dark:border dark:border-slate-800"
+           hover:shadow-lg transition"
         >
           <div class="flex items-center mb-4">
             <img src={`/svg/${menu.icon}.svg`} width="30" alt="" class="mr-1" />
