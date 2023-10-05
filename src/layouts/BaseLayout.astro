@@ -1,14 +1,14 @@
 ---
-import Breadcrumb from "~/components/Breadcrumb.astro";
-import Footer from "~/components/Footer.astro";
-import "../styles/global.css";
+import Breadcrumb from '~/components/Breadcrumb.astro';
+import Footer from '~/components/Footer.astro';
+import '../styles/global.css';
 
 const { title, depth, description } = Astro.props;
 
-const siteName = "PlayTip";
+const siteName = 'PlayTip';
 const docTitle = (title && `${title} | ${siteName}`) || siteName;
 
-import "../styles/global.css";
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -30,6 +30,11 @@ import "../styles/global.css";
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sono"
     />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0722090808539297"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="bg-blue-50">
     <main class={`container max-w-3xl px-4 depth${depth}`}>
